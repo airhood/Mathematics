@@ -5,40 +5,41 @@ import java.util.Scanner;
 public class PiCalculation {
 
     public static void main(String[] args) {
-        PiCalculation obj = new PiCalculation();
         Scanner scanner = new Scanner(System.in);
         int scan = scanner.nextInt();
         scanner.reset();
 
-        int param;
+        long param;
 
-        switch (scan) {
+        switch (0) {
             case 0:
                 System.out.print("x: ");
-                param = scanner.nextInt();
-                obj.limitPiCalculation(param);
+                param = scanner.nextLong();
+                limitPiCalculation(param);
+                break;
             case 1:
                 System.out.print("runAmount: ");
-                param = scanner.nextInt();
-                obj.infiniteGeometricSeries(param);
+                param = scanner.nextLong();
+                infiniteGeometricSeries(param);
+                break;
         }
     }
 
-    public void limitPiCalculation(int x) {
+    public static void limitPiCalculation(long x) {
         System.out.println(x * Math.sin(Math.toRadians(180.0/x)));
     }
 
-    public void infiniteGeometricSeries(long runAmount) {
+    public static void infiniteGeometricSeries(long runAmount) {
         final long start = System.currentTimeMillis();
         int i;
         double pi = 0;
-        double bunmo = 1;
-        double buho = 1;
+        double denominator = 1;
+        double sign = 1;
 
         for (i = 1; i <= runAmount; i++) {
-            pi = pi + (1/bunmo)*buho;
-            bunmo = bunmo + 2;
-            buho = buho * (-1);
+            pi = pi + (1/denominator) * sign;
+            denominator = sign + 2;
+            sign = sign * (-1);
         }
 
         System.out.println(4*pi);
