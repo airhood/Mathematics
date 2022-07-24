@@ -38,7 +38,7 @@ public class PiCalculation {
 
         for (i = 1; i <= runAmount; i++) {
             pi = pi + (1/denominator) * sign;
-            denominator = sign + 2;
+            denominator = denominator + 2;
             sign = sign * (-1);
         }
 
