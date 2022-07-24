@@ -11,7 +11,7 @@ public class PiCalculation {
 
         long param;
 
-        switch (0) {
+        switch (scan) {
             case 0:
                 System.out.print("x: ");
                 param = scanner.nextLong();
